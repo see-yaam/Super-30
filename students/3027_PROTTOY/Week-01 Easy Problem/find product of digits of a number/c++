@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Give a number: ";
+    cin>>n;
+    int count = 0;
+    int product;
+    for(int i=0;i<=n;i++)
+    {
+        int x = n%10;
+        count ++;
+        product = product*x;
+        n = n/10;
+    }
+    cout<<"Product of a digits of number is : "<<product;
+}
