@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main()
+{
+    int start, end, i, j, sum;
+
+    printf("Enter starting number: ");
+    scanf("%d", &start);
+
+    printf("Enter ending number: ");
+    scanf("%d", &end);
+
+    printf("Perfect numbers are:\n");
+
+
+    for(i = start; i <= end; i++)
+    {
+        sum = 0;
+
+
+        for(j = 1; j <= i/2; j++)
+        {
+            if(i % j == 0)
+            {
+                sum = sum + j;
+            }
+        }
+
+        if(sum == i && i != 0)
+        {
+            printf("%d\n", i);
+        }
+    }
+
+    return 0;
+}
