@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "Enter the number: ";
+    cin >> n;
+    double sum = 0;
+
+    if(n <= 0)
+    {
+        cout << "enter number greater than 0" << endl;
+    }
+    else
+    {
+        for(int i = 1; i <= n; i++)
+        {
+            if(i != 0)
+            {
+                sum = sum + 1.0 / i;
+            }
+        }
+
+        cout << "Harmonic Series Sum = " << sum << endl;
+    }
+
+    return 0;
+}
