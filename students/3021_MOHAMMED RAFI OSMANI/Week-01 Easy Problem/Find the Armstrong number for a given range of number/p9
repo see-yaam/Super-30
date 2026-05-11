@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+
+void main() {
+    int n, temp, digit, sum;
+    int mn, mx;
+    int count;
+
+    printf("Input the starting range or number : ");
+    scanf("%d", &mn);
+
+    printf("Input the ending range of number : ");
+    scanf("%d", &mx);
+
+    printf("The Armstrong numbers within the given range : ");
+
+    for (n = mn; n <= mx; n++) {
+        temp = n;
+        sum = 0;
+        count = 0;
+        while (temp != 0) {
+            temp = temp / 10;
+            count++;
+        }
+
+        temp = n;
+        while (temp != 0) {
+            digit = temp % 10;
+            sum = sum + pow(digit, count);
+            temp = temp / 10;
+        }
+        if (sum == n) {
+            printf("%d ", n);
+        }
+    }
+
+    printf("\n");
+}
