@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+int main()
+{
+    int start, end, i;
+    int num, rem;
+    int sum, digits;
+    int temp, power;
+    int j;
+
+    printf("Enter starting number: ");
+    scanf("%d", &start);
+
+    printf("Enter ending number: ");
+    scanf("%d", &end);
+
+    printf("Armstrong numbers are:\n");
+
+    for(i = start; i <= end; i++)
+    {
+        num = i;
+
+        digits = 0;
+
+        while(num != 0)
+        {
+            digits++;
+            num = num / 10;
+        }
+
+        num = i;
+        sum = 0;
+
+        while(num != 0)
+        {
+            rem = num % 10;
+
+            power = 1;
+
+            for(j = 1; j <= digits; j++)
+            {
+                power = power * rem;
+            }
+
+            sum = sum + power;
+
+            num = num / 10;
+        }
+
+        if(sum == i)
+        {
+            printf("%d ", i);
+        }
+    }
+
+    return 0;
+}
