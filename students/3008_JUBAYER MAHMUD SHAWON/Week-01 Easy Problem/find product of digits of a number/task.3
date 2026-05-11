@@ -1,0 +1,18 @@
+#include <iostream>  
+using namespace std;
+
+int main() {       
+  int num,x;
+  cout<<"enter number:";
+  cin>>num;
+  int products=1;
+  for(int i=0;num>0;i++)
+  {
+      x=num%10;
+      products=products*x;
+      num=num/10;
+      
+  }
+  cout<<"products of digits:"<<products;
+    return 0;        
+}
