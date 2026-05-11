@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int fact(int n){
+    int i, f = 1;
+
+    for(i = 1; i <= n; i++)
+    {
+        f = f * i;
+    }
+
+    return f;
+}
+
+int main()
+{
+    int rows, space, i, j, value; // Declare variables.
+
+    printf("Input number of rows: ");
+    scanf("%d", &rows);
+
+    for(i = 0; i < rows; i++)
+    {
+        for(space = 1; space <= rows - i; space++)
+        {
+            printf(" ");
+        }
+
+        for(j = 0; j <= i; j++)
+        {
+            value = fact(i) / (fact(j) * fact(i - j));
+    
+            printf("%4d", value);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
