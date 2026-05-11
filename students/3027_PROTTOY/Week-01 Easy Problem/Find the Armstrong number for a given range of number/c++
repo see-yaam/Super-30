@@ -1,0 +1,40 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    int x,y;
+    cout<<"Enter starting number of range: ";
+    cin>>x;
+    cout<<"Enter ending number of range range: ";
+    cin>>y;
+    
+    cout<<"Armstrong numbers are: ";
+    for(int i=x;i<=y;i++)
+    {
+        int original = i;
+        int sum = 0;
+        int digits = 0;
+        int count = i;
+        if(count== 0)
+        {
+            digits =1;
+        }
+        while(count!=0)
+        {
+            count = count / 10;
+            digits++;
+        }
+        
+        int temp = i;
+        while(temp!=0)
+        {
+            int digit = temp % 10;
+            sum += round(pow(digit,digits));
+            temp = temp /10;
+        }
+        if(sum == original)
+        cout<<i<<" ";
+    }
+}
