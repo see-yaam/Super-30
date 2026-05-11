@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{
+    long long num;
+    long long product = 1;
+    int lD;
+
+    printf("Input number: ");
+    scanf("%lld", &num);
+
+    if(num == 0)
+    {
+        product = 0;
+    }
+
+    while(num != 0)
+    {
+        lD = num % 10;       
+          product = product * lD; 
+        num = num / 10;              
+    }
+
+    printf("Product of digits: %lld\n", product);
+
+    return 0;
+}
