@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    int n,x,power,sum = 0;
+    scanf("%d%d",&n,&x);
+    power=n;
+    for(int i=1; i<=x; i++) {
+        sum=sum+power;
+        power=power*(-n*n);
+        printf("%d\n",power);
+    }
+    printf("%d",sum);
+    return 0;
+}
