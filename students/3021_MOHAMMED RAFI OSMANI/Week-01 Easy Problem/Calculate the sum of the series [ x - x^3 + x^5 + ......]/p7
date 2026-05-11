@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int n, i;
+    float x, sum = 0;
+
+    printf("Enter value of x: ");
+    scanf("%f", &x);
+
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++)
+    {
+        float term = pow(x, 2 * i + 1);
+
+        if(i % 2 == 0)
+            sum = sum + term;
+        else
+            sum = sum - term;
+    }
+    printf("Sum of series = %.2f", sum);
+
+    return 0;
+}
