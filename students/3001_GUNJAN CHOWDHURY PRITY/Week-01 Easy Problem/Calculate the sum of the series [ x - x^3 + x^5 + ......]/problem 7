@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double x, sum = 0.0, term;
+    int n, i, sign = 1, exponent = 1;
+
+    printf("Input the value of x :");
+    scanf("%lf", &x);
+
+    printf("Input number of terms :");
+    scanf("%d", &n);
+
+    printf("The values of the series:\n");
+
+    for (i = 1; i <= n; i++) {
+        term = sign * pow(x, exponent);
+        sum += term;
+        printf("%.0f\n", term);
+        sign = -sign;
+        exponent += 2;
+    }
+
+    printf("\nThe sum = %.0f\n", sum);
+
+    return 0;
+}
