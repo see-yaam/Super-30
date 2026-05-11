@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    double sum = 0.0;
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        sum += 1.0 / i;
+        if (i == 1)
+            printf("1");
+        else
+            printf(" + 1/%d", i);
+    }
+
+    printf("\nSum = %.6f\n", sum);
+
+    return 0;
+}
