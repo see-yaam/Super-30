@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+int main() {
+    int password,attempt;
+    int presentdays,task;
+    int attendanceMarks,bonuspenalty,taskmarks;
+    int finalmarks;
+    
+    for(attempt=1;attempt<=3;attempt++){
+        printf("enter password");
+        scanf("%d",&password);
+        
+        if(password==3030){
+            printf("access granted");
+            break;
+        }
+        else
+        {
+            printf("wrong password");
+            if(attempt<3){
+                printf("%d attempt left", 3-attempt);
+            }
+            else
+            {
+                printf("system blocked");
+            }
+        }
+        
+    }
+    
+    if(password==3030){
+        printf("enter total present days:");
+        scanf("%d",&presentdays);
+        
+        printf("all task submitted?");
+        printf("1=yes\n 0=no\n");
+        scanf("%d",&task);
+        
+        attendanceMarks=presentdays;
+        
+        if(presentdays==5){
+            bonuspenalty=5;
+            printf("attendance marks=%d\n",attendanceMarks);
+            printf("penalty=%d\n",bonuspenalty);
+        }
+        else{
+             bonuspenalty=-3;
+            printf("attendance marks=%d\n",attendanceMarks);
+            printf("penalty=%d\n",bonuspenalty);
+            
+        }
+        if(task==1){
+            taskmarks=10;
+            printf("%d",taskmarks);
+        }
+        else{
+            taskmarks=-10;
+            printf("%d",taskmarks);
+        }
+        
+        finalmarks=attendanceMarks+bonuspenalty+taskmarks;
+        printf("final marks=%d\n",finalmarks);
+    }
+    return 0;
+}
