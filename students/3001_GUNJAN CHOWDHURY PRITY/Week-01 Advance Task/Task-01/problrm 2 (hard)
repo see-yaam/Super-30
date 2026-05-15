@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int corPass = 3030;
+    int maxAtt = 3;
+    int att = 0;
+    int pass;
+    bool granted = false;
+
+    while (att < maxAtt) {
+        cout << "Enter Password: ";
+        cin >> pass;
+        att++;
+        if (pass == corPass) {
+            cout << endl;
+            cout << "Access Granted" << endl;
+            granted = true;
+            break;
+        } else {
+            int left = maxAtt - att;
+            cout << "Wrong Password" << endl;
+            if (left == 1) {
+                cout << left << " Attempt Left" << endl;
+            } else if (left > 0) {
+                cout << left << " Attempts Left" << endl;
+            }
+            cout << endl;
+        }
+    }
+
+    if (!granted) {
+        cout << "System Blocked" << endl;
+        return 0;
+    }
+
+    int days;
+    int task;
+    int attBonus = 0;
+    int taskBonus = 0;
+
+    cout << endl;
+    cout << "Enter Total Present Days: ";
+    cin >> days;
+    cout << endl;
+    cout << "All Tasks Submitted?" << endl;
+    cout << "1 = Yes" << endl;
+    cout << "0 = No" << endl;
+    cin >> task;
+
+    int attMarks = days;
+    cout << endl;
+    cout << "Attendance Marks = " << attMarks << endl;
+
+    if (days == 5) {
+        attBonus = 5;
+        cout << "Perfect Attendance Bonus = " << attBonus << endl;
+    } else {
+        attBonus = -3;
+        cout << "Attendance Penalty = " << attBonus << endl;
+    }
+
+    if (task == 1) {
+        taskBonus = 10;
+        cout << "Task Bonus = " << taskBonus << endl;
+    } else {
+        taskBonus = -10;
+        cout << "Task Penalty = " << taskBonus << endl;
+    }
+
+    int finalMarks = attMarks + attBonus + taskBonus;
+    cout << endl;
+    cout << "Final Marks = " << finalMarks << endl;
+
+    return 0;
+}
