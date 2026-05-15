@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    int password;
+    int attempts = 3;
+    int accessGranted = 0; 
+
+    cout << "Enter Password:\n";
+    
+    while (attempts > 0) {
+        cin >> password;
+        
+        if (password == 3030) {
+            cout << "Access Granted\n";
+            accessGranted = 1;
+            break;
+        } else {
+            attempts = attempts - 1;
+            
+            if (attempts > 0) {
+                cout << "Wrong Password\n";
+                cout << attempts << " Attempts Left\n\n";
+            } else {
+                cout << "Wrong Password\n";
+                cout << "System Blocked\n";
+            }
+        }
+    }
+    
+    if (accessGranted == 1) {
+        int presentDays;
+        int taskSubmitted;
+        int attendanceMarks;
+        int attendanceBonusOrPenalty;
+        int taskBonusOrPenalty;
+        int finalMarks;
+
+        cout << "\nEnter Total Present Days:\n";
+        cin >> presentDays;
+        
+        cout << "\nAll Tasks Submitted?\n1 = Yes\n0 = No\n\n";
+        cin >> taskSubmitted;
+        
+        attendanceMarks = presentDays;
+        
+        if (presentDays == 5) {
+            attendanceBonusOrPenalty = 5;
+            cout << "\nAttendance Marks = " << attendanceMarks << "\n";
+            cout << "Perfect Attendance Bonus = " << attendanceBonusOrPenalty << "\n";
+        } else {
+            attendanceBonusOrPenalty = -3;
+            cout << "Attendance Marks = " << attendanceMarks << "\n";
+            cout << "Attendance Penalty = " << attendanceBonusOrPenalty << "\n";
+        }
+        
+        if (taskSubmitted == 1) {
+            taskBonusOrPenalty = 10;
+            cout << "Task Bonus = " << taskBonusOrPenalty << "\n";
+        } else {
+            taskBonusOrPenalty = -10;
+            cout << "Task Penalty = " << taskBonusOrPenalty << "\n";
+        }
+        
+        finalMarks = attendanceMarks + attendanceBonusOrPenalty + taskBonusOrPenalty;
+        cout << "\nFinal Marks = " << finalMarks << "\n";
+    }
+
+    return 0;
+}
