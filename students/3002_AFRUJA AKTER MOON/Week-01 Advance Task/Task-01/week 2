@@ -1,0 +1,100 @@
+#include <stdio.h>
+
+int main()
+{
+    int password;
+    int attempts = 3;
+
+    int presentDays;
+    int task;
+
+    int attendanceMarks;
+    int attendanceBonus = 0;
+    int attendancePenalty = 0;
+
+    int taskMarks = 0;
+
+    int finalMarks;
+
+    while(attempts > 0)
+    {
+        printf("Enter Password: ");
+        scanf("%d",&password);
+
+        if(password == 3030)
+        {
+            printf("\nAccess Granted\n");
+
+            printf("\nEnter Total Present Days: ");
+            scanf("%d",&presentDays);
+
+            attendanceMarks = presentDays;
+
+            if(presentDays == 5)
+            {
+                attendanceBonus = 5;
+            }
+            else
+            {
+                attendancePenalty = -3;
+            }
+
+            printf("\nAll Tasks Submitted?\n");
+            printf("1 = Yes\n");
+            printf("0 = No\n");
+            scanf("%d",&task);
+
+            if(task == 1)
+            {
+                taskMarks = 10;
+            }
+            else
+            {
+                taskMarks = -10;
+            }
+
+            finalMarks = attendanceMarks + attendanceBonus + attendancePenalty + taskMarks;
+
+            printf("\nAttendance Marks = %d\n",attendanceMarks);
+
+            if(attendanceBonus != 0)
+            {
+                printf("Perfect Attendance Bonus = %d\n",attendanceBonus);
+            }
+            else
+            {
+                printf("Attendance Penalty = %d\n",attendancePenalty);
+            }
+
+            if(taskMarks > 0)
+            {
+                printf("Task Bonus = %d\n",taskMarks);
+            }
+            else
+            {
+                printf("Task Penalty = %d\n",taskMarks);
+            }
+
+            printf("\nFinal Marks = %d\n",finalMarks);
+
+            break;
+        }
+
+        else
+        {
+            attempts--;
+
+            if(attempts > 0)
+            {
+                printf("\nWrong Password\n");
+                printf("%d Attempts Left\n\n",attempts);
+            }
+            else
+            {
+                printf("\nSystem Blocked\n");
+            }
+        }
+    }
+
+    return 0;
+}
