@@ -1,0 +1,100 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int password;
+    int TotalAttempt = 3;
+    int correct = 0;
+
+
+    while(TotalAttempt > 0)
+    {
+        cout << "Enter Password: ";
+        cin >> password;
+
+        if(password == 3030)
+        {
+            cout << "Access Granted" << endl;
+            correct = 1;
+            break;
+        }
+        else
+        {
+            TotalAttempt--;
+
+            cout << "Wrong Password" << endl;
+
+            if(TotalAttempt > 0)
+            {
+                cout << TotalAttempt << " Attempts Left" << endl;
+            }
+        }
+    }
+
+
+    if(correct == 0)
+    {
+        cout << "System Blocked" << endl;
+    }
+
+
+    if(correct == 1)
+    {
+        int TotalPresent;
+        int task;
+
+        int attendanceMarks;
+        int attendanceBonus = 0;
+        int taskMarks = 0;
+        int finalMarks;
+
+        cout << "Enter Total Present Days: ";
+        cin >> TotalPresent;
+
+        cout << "All Tasks Submitted?" << endl;
+        cout << "1 = Yes" << endl;
+        cout << "0 = No" << endl;
+        cin >> task;
+
+        attendanceMarks = TotalPresent;
+
+
+        if(TotalPresent == 5)
+        {
+            attendanceBonus = 5;
+            cout << "Perfect Attendance Bonus = 5" << endl;
+        }
+        else
+        {
+            attendanceBonus = -3;
+            cout << "Attendance Penalty = -3" << endl;
+        }
+
+
+        if(task == 1)
+        {
+            taskMarks = 10;
+            cout << "Task Bonus = 10" << endl;
+        }
+        else
+        {
+            taskMarks = -10;
+            cout << "Task Penalty = -10" << endl;
+        }
+
+
+        finalMarks =
+        attendanceMarks
+        + attendanceBonus
+        + taskMarks;
+
+        cout << "Attendance Marks = "
+             << attendanceMarks << endl;
+
+        cout << "Final Marks = "
+             << finalMarks << endl;
+    }
+
+    return 0;
+}
