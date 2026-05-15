@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int p, a=0, d, t, m;
+    
+    while(a<3){
+        cout << "Enter Password: " << endl;
+        cin >> p;
+        
+        if(p==3030){
+            cout << "Access Granted" << endl;
+            cout << "Enter Total Present Days: " << endl;
+            cin >> d;
+            cout << "All Tasks Submitted? (1=Yes, 0=No): " << endl;
+            cin >> t;
+            
+            m = d;
+            
+            if(d==5){
+                cout << "Attendance Marks = " << d << endl;
+                cout << "Perfect Attendance Bonus = 5" << endl;
+                m = m + 5;
+            } else {
+                cout << "Attendance Marks = " << d << endl;
+                cout << "Attendance Penalty = -3" << endl;
+                m = m - 3;
+            }
+            
+            if(t==1){
+                cout << "Task Bonus = 10" << endl;
+                m = m + 10;
+            } else {
+                cout << "Task Penalty = -10" << endl;
+                m = m - 10;
+            }
+            
+            cout << "Final Marks = " << m << endl;
+            return 0;
+        } else {
+            a++;
+            if(a<3){
+                cout << "Wrong Password" << endl;
+                cout << (3-a) << " Attempts Left" << endl;
+            } else {
+                cout << "System Blocked" << endl;
+            }
+        }
+    }
+    return 0;
+}
